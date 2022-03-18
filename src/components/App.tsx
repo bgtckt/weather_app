@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../styles/main.scss'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { MainPage } from '../pages/MainPage';
 
 export default function App() {
-  const [city, setCity] = useState('');
 
   return (
-    <div>
-      <h1>Weather App</h1>
-      <div>
-        <label style={{display: 'block'}}>Поиск города</label>
-        <input type='text' placeholder='Введите название города' onChange={(evt) => setCity(evt.target.value)}/>
-        <button>Найти</button>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<MainPage/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }

@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 let mode = 'development'; // По умолчанию режим development
 let target = 'web'; // в режиме разработки browserslist не используется
@@ -14,6 +15,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // Создаем массив плагинов
 const plugins = [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: './src/index.html', // Данный html будет использован как шаблон
     }),
@@ -68,11 +70,16 @@ module.exports = {
                 type: 'asset/resource',
             },
             {
-                test: /\.(ts|tsx?)$/i,
+                test: /\.(ts|js)x?$/i,
                 exclude: /node_modules/, // не обрабатываем файлы из node_modules
                 use: {
                     loader: 'babel-loader',
                     options: {
+                        presets: [
+                            "@babel/preset-env",
+                            "@babel/preset-react",
+                            "@babel/preset-typescript",
+                        ],
                         cacheDirectory: true, // Использование кэша для избежания рекомпиляции при каждом запуске
                     },
                 },
