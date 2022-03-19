@@ -1,5 +1,6 @@
 {
   "name": "weather_app",
+  "homepage": "http://bgtckt.github.io/weather_app",
   "version": "1.0.0",
   "description": "React-typescript portfolio project",
   "main": "index.js",
@@ -8,7 +9,9 @@
     "start": "cross-env SERVE=true webpack serve --open",
     "build": "webpack",
     "build-prod": "webpack --mode=production",
-    "clean": "rd /s /q dist"
+    "clean": "rd /s /q dist",
+    "predeploy": "npm run build-prod",
+    "deploy": "gh-pages -d build-prod"
   },
   "author": "Alexey Anpliov",
   "license": "ISC",
