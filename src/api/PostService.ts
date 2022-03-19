@@ -7,9 +7,8 @@ export default class PostService {
 
   // получение данных о текущей погоде в городе
   static async getCityData(city: string) {
-    return await axios.get<ICity>(`https://api.openweathermap.org/data/2.5/weather?q=${city}`, {
+    return await axios.get<ICity>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e3751ba788ee94c18563e83a7e54362a`, {
       params: {
-        appid: process.env.REACT_APP_WEATHER_KEY,
         lang: 'ru',
         units: 'metric'
       }
@@ -18,9 +17,8 @@ export default class PostService {
 
   // получение прогноза о погоде в городе на неделю
   static async getWeatherByDays(lat: number, lon: number) {
-    return await axios.get<IForecast>(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,current,alerts`, {
+    return await axios.get<IForecast>(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=e3751ba788ee94c18563e83a7e54362a&exclude=hourly,minutely,current,alerts`, {
       params: {
-        appid: process.env.REACT_APP_WEATHER_KEY,
         lang: 'ru',
         units: 'metric'
       }
