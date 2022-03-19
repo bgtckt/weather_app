@@ -1,0 +1,32 @@
+.day_item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px 0 5px 7px;
+  font-size: 14px;
+  background-color: $color-gray;
+  border-radius: 5px;
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    margin: 0 10px;
+  }
+
+  &__date {
+    display: inline-block;
+    width: 40px;
+  }
+
+  &__temp {
+    font-weight: 700;
+    color: $color-green;
+  }
+
+  &__description {
+    color: $color-orange;
+  }
+}

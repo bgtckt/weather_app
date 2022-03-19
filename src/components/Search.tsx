@@ -10,14 +10,15 @@ interface searchProps {
 // поиск данных о погоде по названию города
 export const Search: React.FC<searchProps> = ({location, setLocation, getLocation}) => {
   return (
-    <div>
-      <label style={{display: 'block'}}>Поиск города</label>
+    <div className='search'>
+      <label className='search__label'>Узнать погоду</label>
       <input 
+        className='search__input'
         type='text' 
         placeholder='Введите название города' 
         onChange={(evt: React.ChangeEvent<HTMLInputElement>) => setLocation(evt.target.value)}
       />
-      <button onClick={() => getLocation(location)}>Найти</button>
+      <button className='search__button' onClick={() => getLocation(location)}>Найти</button>
     </div>
   )
 }

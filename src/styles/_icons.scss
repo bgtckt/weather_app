@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'weather';
+  src:  url('../assets/fonts/weather.ttf?x8wozi') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'weather' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 30px;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-lightning2:before {
+  content: "\e900";
+}
+.icon-cloudy2:before {
+  content: "\e901";
+}
+.icon-snowy3:before {
+  content: "\e902";
+}
+.icon-snowy2:before {
+  content: "\e903";
+}
+.icon-snowy1:before {
+  content: "\e904";
+}
+.icon-windy2:before {
+  content: "\e905";
+}
+.icon-windy1:before {
+  content: "\e906";
+}
+.icon-rainy2:before {
+  content: "\e907";
+}
+.icon-rainy1:before {
+  content: "\e908";
+}
+.icon-lightning1:before {
+  content: "\e909";
+}
+.icon-cloudy1:before {
+  content: "\e90a";
+}
+.icon-partycloudy2:before {
+  content: "\e90b";
+}
+.icon-partycloudy1:before {
+  content: "\e90c";
+}
+.icon-moon:before {
+  content: "\e90d";
+}
+.icon-sun:before {
+  content: "\e90e";
+}

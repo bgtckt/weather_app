@@ -1,5 +1,6 @@
 import React from 'react'
 import { IDaily } from '../types/forecast';
+import { getIconName } from '../utils'
 
 // типы данных пропсов компонента
 interface DayItemProps {
@@ -9,13 +10,15 @@ interface DayItemProps {
 // карточка с данными о погоде на конкретный день для недельного прогноза 
 export const DayItem: React.FC<DayItemProps> = ({day}) => {
   return (
-    <div style={{border: '2px solid blue'}}>
-      <p>{new Date(day.dt * 1000).toLocaleDateString()}</p>
-      <div>
-        <img src='' alt='Погода'/>
-        <p>{Math.round(day.temp.day)} / {Math.round(day.temp.night)}°C</p>
+    <div className='day_item'>
+      <p className='day_item__date'>{new Date(day.dt * 1000).toLocaleDateString().slice(0, 6)}</p>
+      <div className='day_item__block'>
+        <i className={`icon-${getIconName(day.weather[0].description)}`}/>
+        <span className='day_item__temp'>{Math.round(day.temp.day)}/{Math.round(day.temp.night)}°C</span>
       </div>
-      <p>{day.weather[0].description.charAt(0).toUpperCase() + day.weather[0].description.slice(1)}</p>
+      <p className='day_item__description'>
+        {day.weather[0].description.charAt(0).toUpperCase() + day.weather[0].description.slice(1)}
+      </p>
     </div>
   )
 }

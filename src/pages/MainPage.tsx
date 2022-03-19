@@ -21,6 +21,7 @@ export const MainPage: React.FC = () => {
   async function getCity(location: string) {
     try {
       const response = await PostService.getCityData(location);
+      console.log(response.data);
       setWeatherNow(response.data);
       setCoords(response.data.coord);
     } catch (error) {
@@ -45,8 +46,11 @@ export const MainPage: React.FC = () => {
   }, [coords]);
 
   return (
-    <div>
-      <h1>Weather App</h1>
+    <div className='app'>
+      <div className='app__header'>
+        <h1 className='app__title'>WeatherApp</h1>
+        <i className='icon-partycloudy2'/>
+      </div>
       <Search location={city} setLocation={setCity} getLocation={getCity}/>
       {weatherNow?.name && <WeatherCard weather={weatherNow}/>}
       {forecast?.length && <DaysList days={forecast}/>}

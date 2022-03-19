@@ -16,3 +16,30 @@ export function getWindDirection(data: number): string {
     return 'Ю';
   } else return 'З';
 }
+
+// функция возвращает название иконки в зависимости от описания погоды
+export function getIconName(description: string): string {
+  switch (description) {
+    case ('ясно'): return 'sun';
+    break;
+    case ('облачно с прояснениями' || 'переменная облачность'): return 'partycloudy1';
+    break;
+    case ('переменная облачность'): return 'partycloudy1';
+    break;
+    case ('небольшая облачность'): return 'cloudy1';
+    break;
+    case ('пасмурно'): return 'cloudy2';
+    break;
+    case ('небольшой дождь'): return 'rainy1';
+    break;
+    case ('дождь'): return 'rainy2';
+    break;
+    case ('небольшой снег'): return 'snowy1';
+    break;
+    case ('снег'): return 'snowy2';
+    break;
+    case ('снег с дождём'): return 'snowy3';
+    break;
+    default: return 'sun';
+  }
+}

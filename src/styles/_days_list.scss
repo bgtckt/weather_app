@@ -1,0 +1,15 @@
+.days_list {
+  width: 375px;
+  margin: 0 auto;
+  padding: 5px 15px;
+  background-color: $color-white;
+  border-left: 1px solid $color-orange;
+
+  &__title {
+    border-bottom: 1px solid $color-orange;
+  }
+
+  &__content {
+    margin-top: 15px;
+  }
+}
